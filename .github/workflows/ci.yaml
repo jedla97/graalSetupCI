@@ -7,8 +7,8 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        java: [ 17 ]
-        graalvm-version: [ mandrel-23.0.1.2-Final ]
+        java: [ 21 ]
+        graalvm-version: [ mandrel-23.1.0.0-Final ]
         graalvm-java-version: [ "17" ]
     steps:
       - uses: actions/checkout@v3
