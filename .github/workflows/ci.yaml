@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         java: [ 11, 17 ]
-        graalvm-version: [ "mandrel-latest" ]
+        graalvm-version: [ 23.0.1 ]
         graalvm-java-version: [ "17" ]
     steps:
       - uses: actions/checkout@v3
