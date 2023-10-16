@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        java: [ 11, 17 ]
+        java: [ 17 ]
         graalvm-version: [ mandrel-22 ]
         graalvm-java-version: [ "17" ]
     steps:
@@ -24,6 +24,14 @@ jobs:
         uses: graalvm/setup-graalvm@v1
         with:
           version: ${{ matrix.graalvm-version }}
+          java-version: ${{ matrix.graalvm-java-version }}
+          components: 'native-image'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup GraalVM2
+        id: setup-graalvm2
+        uses: graalvm/setup-graalvm@v1
+        with:
+          version: latest
           java-version: ${{ matrix.graalvm-java-version }}
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
