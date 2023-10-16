@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         java: [ 11, 17 ]
-        graalvm-version: [ 23.0.1 ]
+        graalvm-version: [ mandrel-latest ]
         graalvm-java-version: [ "17" ]
     steps:
       - uses: actions/checkout@v3
@@ -26,4 +26,5 @@ jobs:
           version: ${{ matrix.graalvm-version }}
           java-version: ${{ matrix.graalvm-java-version }}
           components: 'native-image'
+          distribution: 'mandrel'
           github-token: ${{ secrets.GITHUB_TOKEN }}
