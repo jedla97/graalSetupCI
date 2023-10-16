@@ -23,7 +23,6 @@ jobs:
         id: setup-graalvm
         uses: graalvm/setup-graalvm@v1
         with:
-          version: ${{ matrix.graalvm-version }}
           java-version: ${{ matrix.graalvm-java-version }}
           components: 'native-image'
           distribution: 'mandrel'
